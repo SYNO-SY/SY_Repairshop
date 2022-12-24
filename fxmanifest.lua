@@ -1,7 +1,8 @@
 fx_version 'cerulean'
 games {'gta5'}
 
-description ''
+author '𝐒 𝐘 𝐍 𝐎#1760'
+description 'repairshop script for fivem'
 
 lua54 'yes'
 
