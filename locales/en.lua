@@ -7,4 +7,3 @@ Locales['en'] = {
 	['not_enough_money'] = 'You don\'t have enough cash',
 	['blips_name'] = 'Car Repair Station'
 }
-
