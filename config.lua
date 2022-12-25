@@ -6,8 +6,6 @@ Config.EnableSoundEffect = true
 Config.Blips = true
 Config.cost = 500
 
-
-
 Config.Stations = {
 
 	{x = -216.8, y = 6200.39, z = 31.06},
@@ -32,3 +30,7 @@ Config.Stations = {
 	{x = 479.45, y = -1890.17, z = 25.74},
 
 }
+
+function sendNotification(message, messageType, messageTimeout)
+	exports['SY_Notify']:Alert("Repair Station", message, 5000, 'info') -- you can change the notification as what you are using on server.
+end
