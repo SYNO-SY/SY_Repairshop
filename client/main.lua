@@ -116,14 +116,3 @@ if Config.Blips then
 		end
 	end)
 end
-
-function hintToDisplay(text)
-	SetTextComponentFormat("STRING")
-	AddTextComponentString(text)
-	DisplayHelpTextFromStringLabel(0, 0, 1, -1)
-end
-
---notification
-function sendNotification(message, messageType, messageTimeout)
-	exports['SY_Notify']:Alert("Repair Station", message, 5000, 'info')
-end
