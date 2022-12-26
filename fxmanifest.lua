@@ -7,7 +7,7 @@ description 'repairshop script for fivem'
 lua54 'yes'
 
 shared_script {
-	'@es_extended/imports.lua'
+	'@es_extended/imports.lua',
 	'@es_extended/locale.lua',
 	'config.lua',
 	'locales/en.lua',
