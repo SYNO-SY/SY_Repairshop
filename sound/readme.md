@@ -1,2 +1,0 @@
-- Add the car_sound.ogg file inside the "interact-sound\client\html\sounds" folder
-- After adding don't forget to add file path inside the fxmanifest.lua
