@@ -10,11 +10,11 @@ description 'repairshop script for fivem'
 lua54 'yes'
 
 shared_script {
-	'@es_extended/imports.lua',
+	'@ox_lib/init.lua',
 	'@es_extended/locale.lua',
 	'config.lua',
 	'locales/en.lua',
-	'@ox_lib/init.lua',
+
 }
 
 server_scripts {
