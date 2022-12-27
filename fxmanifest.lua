@@ -1,6 +1,7 @@
 fx_version 'cerulean'
 games {'gta5'}
 
+version      '0.1'
 author '𝐒 𝐘 𝐍 𝐎#1760'
 description 'repairshop script for fivem'
 
