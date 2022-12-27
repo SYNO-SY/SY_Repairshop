@@ -3,7 +3,7 @@ use_experimental_fxv2_oal 'yes'
 lua54        'yes'
 game         'gta5'
 
-version      '0.1'
+version      '0.2'
 author '𝐒 𝐘 𝐍 𝐎#1760'
 description 'repairshop script for fivem'
 
