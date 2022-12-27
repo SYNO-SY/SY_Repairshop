@@ -1,11 +1,11 @@
 local fixing = false
 local lastZone, currentAction
 
-Citizen.CreateThread (function()	
+CreateThread (function()	
     while true do
-		Citizen.Wait(0)
+		Wait(0)
 		if not IsPedInAnyVehicle(PlayerPedId(), false) then 
-		    Citizen.Wait(1000)
+		    Wait(1000)
 		end
 		if IsPedInAnyVehicle(PlayerPedId(), false) then
 			local playerPed = PlayerPedId()
@@ -100,7 +100,7 @@ function DoorControl(door)
 end
 
 if Config.Blips then
-	Citizen.CreateThread(function()
+	CreateThread(function()
 		for i=1, #Config.Stations, 1 do
 			local blip = AddBlipForCoord(Config.Stations[i].x, Config.Stations[i].y, Config.Stations[i].z)
 
