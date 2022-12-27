@@ -4,8 +4,9 @@ Vehicle reapairshop script for fivem
 ![image (2)](https://user-images.githubusercontent.com/89760730/209627840-c7dc4f14-242f-4fc5-9788-f86bd7736782.png)
 
 ## Download 
-- from release page:- https://github.com/SYNO-SY/SY_Repairshop/releases/tag/SY_Repairshop
-- you can download directly from code tab.
+- You can download directly from code tab  OR
+  From release page:- https://github.com/SYNO-SY/SY_Repairshop/releases/tag/SY_Repairshop
+
 ## Dependency
 
 - OkokTextUi
