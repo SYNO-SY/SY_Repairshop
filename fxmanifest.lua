@@ -1,5 +1,7 @@
-fx_version 'cerulean'
-games {'gta5'}
+fx_version   'cerulean'
+use_experimental_fxv2_oal 'yes'
+lua54        'yes'
+game         'gta5'
 
 version      '0.1'
 author '𝐒 𝐘 𝐍 𝐎#1760'
