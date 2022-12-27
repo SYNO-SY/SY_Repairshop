@@ -1,10 +1,12 @@
 Config = {}
-Config.Locale = 'en' --en, tw
-
-Config.RepairTime = 9000
-Config.EnableSoundEffect = true
-Config.Blips = true
-Config.cost = 500
+Config.Locale = 'en'                -- en(currently only in english)
+Config.RepairTime = 9000            -- time to repair the vehicle.
+Config.EnableSoundEffect = true     -- enables repair sound if true.
+Config.Blips = true                 -- show blip if true.
+Config.cost = 500                   -- cost for repairing.
+Config.textui = "ESX"               -- ESX,OX,okok.
+Config.progressBar = "ESX"          -- ESX,OX.
+Config.Notification = "ESX"         -- ESX,okok,custom.
 
 Config.Stations = {
 
@@ -31,6 +33,54 @@ Config.Stations = {
 
 }
 
-function sendNotification(message, messageType, messageTimeout)
-	exports['SY_Notify']:Alert("Repair Station", message, 5000, 'info') -- you can change the notification as what you are using on server.
+--TextUI
+function showtextui()
+	if Config.textui == "ESX" then
+		ESX.TextUI(_U('press_repair'), "info")
+	elseif Config.textui == "okok" then
+	    exports['okokTextUI']:Open(_U('press_repair'), 'darkblue', 'left')
+	elseif Config.textui == "ox" then
+		lib.showTextUI(_U('press_repair'), {
+			position = "right-center",
+			icon = 'repair',
+			style = {
+				borderRadius = 20,
+				backgroundColor = '#3399ff',
+				color = 'white'
+			}
+		})
+	end
+end
+
+function hidetextui()
+	if Config.textui == "ESX" then
+		ESX.HideUI()
+	elseif Config.textui == "okok" then
+	    exports['okokTextUI']:Close()
+	elseif Config.textui == "ox" then
+		lib.hideTextUI()
+	end
+end
+--end of TextUI
+
+
+--notification
+sendNotification = function(text,msgtype,IsServer,src,time)
+    if IsServer then
+		if Config.Notification == "ESX" then
+			TriggerClientEvent('esx:showNotification', source, text, msgtype, time)
+		elseif Config.Notification == "okok" then
+			TriggerClientEvent('okokNotify:Alert', source, "Repairshop", text, time, msgtype )
+		elseif Config.Notification == "custom"  then
+			TriggerClientEvent('SY_Notify:Alert', source, "Repairshop", text, time, msgtype )
+		end
+    else
+		if Config.Notification == "ESX" then
+			ESX.ShowNotification(text, time, msgtype)
+		elseif Config.Notification == "okok" then
+			exports['okokNotify']:Alert("Repairshop", text, 5000, msgtype)
+		elseif Config.Notification == "custom"  then
+			exports['SY_Notify']:Alert("Repairshop", text, 5000, msgtype)
+		end
+    end
 end
