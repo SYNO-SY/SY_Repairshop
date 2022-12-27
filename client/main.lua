@@ -23,13 +23,13 @@ CreateThread (function()
 			end
 			if (isInMarker and not hasAlreadyEnteredMarker) or (isInMarker and lastZone ~= currentZone) then
 				hasAlreadyEnteredMarker, lastZone = true, currentZone
-				exports['okokTextUI']:Open("Press [E] to repair vehicle", 'darkblue', 'left')
+				showtextui()
 				TriggerEvent('sy_repairshop:hasEnteredMarker', currentZone)
 			end
 	
 			if not isInMarker and hasAlreadyEnteredMarker then
 				hasAlreadyEnteredMarker = false
-				exports['okokTextUI']:Close()	
+				hidetextui()	
 			end
 			if letSleep then
 				Wait(500)
@@ -69,18 +69,25 @@ AddEventHandler('carfixstation:fixCar', function()
 	local fixing = true
 	TriggerEvent('carfixstation:markAnimation')	
 	FreezeEntityPosition(vehicle, true)
-	sendNotification(_U('repair_processing'), 'warning', Config.RepairTime-700)
-	TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 5.0, 'car_repair', 0.7)
+	sendNotification(_U('repair_processing'), 'info', false, nil, Config.RepairTime-700 )
+	if Config.EnableSoundEffect then
+	    TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 5.0, 'car_repair', 0.7)
+	end
 	DoorControl(4)
-	lib.progressBar({
-		duration = Config.RepairTime,
-		label = _U('repair_processing'),
-		useWhileDead = false,
-		canCancel = false,
-		disable = {
-			car = true,
-		},
-	})
+        if Config.progressBar == 'ESX' then
+	    ESX.Progressbar(_U('repair_processing'), Config.RepairTime)
+	elseif Config.progressBar == 'ox' then
+		lib.progressBar({
+			duration = Config.RepairTime,
+			label = _U('repair_processing'),
+			useWhileDead = false,
+			canCancel = false,
+			disable = {
+				car = true,
+			},
+		})
+        end
+	sendNotification(_U('repair_finish'),"success",false,nil,5000)
 	local fixing = false
 	SetVehicleFixed(vehicle)
 	SetVehicleDeformationFixed(vehicle)
