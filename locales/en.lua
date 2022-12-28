@@ -1,6 +1,5 @@
 Locales['en'] = {
-	['press_repair_free'] = 'Press ~INPUT_PICKUP~ to repair vehicle for free',
-	['press_repair_cost'] = 'Press ~INPUT_PICKUP~ cost ~g~$%s ~s~to repair vehicle',
+	['press_repair'] = 'Press [E] to repair the vehicle',
 	['repair_processing'] = 'Repair in progress',
 	['repair_finish'] = 'Vehicle has been repaired!',
 	['cost_repair'] = 'You spent $%s to repair vehicle',
