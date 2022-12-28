@@ -9,9 +9,11 @@ Vehicle reapairshop script for fivem
 
 ## Dependency
 
-- OkokTextUi
-- ox_lib - https://github.com/overextended/ox_lib
 - interact-sounds -https://github.com/SYNO-SY/interact-sound (credits to @plunkettscott)
+- ESX textui,progressbar & Notify 
+- OkokTextUi (optional)
+- ox_lib - https://github.com/overextended/ox_lib (optional)
+
 
 ## ToDo
 
