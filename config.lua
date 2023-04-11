@@ -9,8 +9,6 @@ Config.progressBar = "ESX"          -- ESX,OX.
 Config.Notification = "ESX"         -- ESX,okok,custom.
 
 Config.Stations = {
-
-	{x = -216.8, y = 6200.39, z = 31.06},
 	{x = -216.8, y = 6200.39, z = 31.06},
 	{x = 1532.37, y = 782.2, z = 77.44},
 	{x = 481.31, y = -1279.83, z = 28.96},
