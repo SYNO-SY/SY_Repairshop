@@ -1,3 +1,4 @@
+ESX = exports["es_extended"]:getSharedObject()
 local fixing = false
 local lastZone, currentAction
 
